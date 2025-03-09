@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Compress your images online with our free image compression tool. Optimize images for web and mobile with adjustable compression levels.">
+  <meta name="description" content="Compress your images online with our free image compression tool. Optimize images for web and mobile with adjustable compression levels and target sizes.">
   <meta name="keywords" content="image compression, compress images, optimize images, image optimizer, free image tool">
   <meta name="author" content="Your Name">
   <title>Image Compression Tool - Optimize Your Images Online</title>
@@ -17,41 +17,51 @@
 
     /* Global Styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
       color: #333;
       line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background-color: #007BFF;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 10px;
+      font-weight: 600;
+      animation: fadeInDown 1s ease;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       opacity: 0.9;
+      animation: fadeInUp 1s ease;
     }
 
     main {
-      padding: 20px;
+      flex: 1;
+      padding: 40px 20px;
       max-width: 800px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .upload-section {
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease;
     }
 
     .upload-section input[type="file"] {
@@ -60,36 +70,39 @@
 
     .upload-section label {
       display: inline-block;
-      background-color: #007BFF;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
       color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 12px 25px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 1rem;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .upload-section label:hover {
-      background-color: #0056b3;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
     }
 
     .slider-container {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .slider-container label {
       display: block;
       font-size: 1rem;
       margin-bottom: 10px;
+      color: #555;
     }
 
     .slider {
       width: 100%;
       -webkit-appearance: none;
       appearance: none;
-      height: 8px;
+      height: 10px;
       background: #ddd;
-      border-radius: 5px;
+      border-radius: 10px;
       outline: none;
       opacity: 0.7;
       transition: opacity 0.2s;
@@ -102,82 +115,114 @@
     .slider::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       background: #007BFF;
       border-radius: 50%;
       cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
     }
 
     .slider::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       background: #007BFF;
       border-radius: 50%;
       cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .size-container {
+      margin-bottom: 25px;
+    }
+
+    .size-container label {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .size-container input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
     }
 
     .upload-section button {
       width: 100%;
-      padding: 12px;
-      background-color: #28a745;
+      padding: 14px;
+      background: linear-gradient(135deg, #28a745, #218838);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .upload-section button:hover {
-      background-color: #218838;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
     }
 
     .result-section {
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
+      animation: fadeIn 2s ease;
     }
 
     .result-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #007BFF;
     }
 
     #compressedImageContainer img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
-      margin-top: 15px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     #downloadLink {
       display: inline-block;
       margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #007BFF;
+      padding: 12px 25px;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     #downloadLink:hover {
-      background-color: #0056b3;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
     }
 
     .ad-unit {
-      margin: 20px 0;
+      margin: 30px 0;
       text-align: center;
     }
 
     footer {
       text-align: center;
-      padding: 15px;
-      background-color: #007BFF;
+      padding: 20px;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
       color: white;
-      margin-top: 20px;
+      margin-top: 40px;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
     }
 
     footer p {
@@ -185,10 +230,38 @@
       font-size: 0.9rem;
     }
 
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* Responsive Design */
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       header p {
@@ -204,6 +277,8 @@
       }
     }
   </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -232,6 +307,10 @@
       <div class="slider-container">
         <label for="compressionLevel">Compression Level: <span id="compressionValue">50%</span></label>
         <input type="range" id="compressionLevel" class="slider" min="0.1" max="0.9" step="0.1" value="0.5">
+      </div>
+      <div class="size-container">
+        <label for="targetSize">Target Size (KB):</label>
+        <input type="number" id="targetSize" placeholder="Enter target size in KB" min="10">
       </div>
       <button id="compressBtn">Compress Image</button>
     </section>
@@ -265,6 +344,7 @@
     // JavaScript Functionality
     const compressionSlider = document.getElementById('compressionLevel');
     const compressionValue = document.getElementById('compressionValue');
+    const targetSizeInput = document.getElementById('targetSize');
 
     // Update compression value display
     compressionSlider.addEventListener('input', function () {
@@ -275,11 +355,17 @@
     document.getElementById('compressBtn').addEventListener('click', function () {
       const fileInput = document.getElementById('imageInput');
       const compressionLevel = parseFloat(compressionSlider.value);
+      const targetSize = parseFloat(targetSizeInput.value) * 1024; // Convert KB to bytes
       const compressedImageContainer = document.getElementById('compressedImageContainer');
       const downloadLink = document.getElementById('downloadLink');
 
       if (fileInput.files.length === 0) {
         alert('Please select an image to compress.');
+        return;
+      }
+
+      if (!targetSize || targetSize <= 0) {
+        alert('Please enter a valid target size.');
         return;
       }
 
@@ -301,16 +387,29 @@
           // Draw image on canvas
           ctx.drawImage(img, 0, 0);
 
-          // Compress image
-          canvas.toBlob(
-            function (blob) {
-              const compressedUrl = URL.createObjectURL(blob);
-              compressedImageContainer.innerHTML = `<img src="${compressedUrl}" alt="Compressed Image">`;
-              downloadLink.href = compressedUrl;
-            },
-            'image/jpeg',
-            compressionLevel
-          );
+          // Compress image to target size
+          let quality = compressionLevel;
+          let blob;
+
+          const compressImage = () => {
+            canvas.toBlob(
+              function (compressedBlob) {
+                if (compressedBlob.size <= targetSize || quality <= 0.1) {
+                  blob = compressedBlob;
+                  const compressedUrl = URL.createObjectURL(blob);
+                  compressedImageContainer.innerHTML = `<img src="${compressedUrl}" alt="Compressed Image">`;
+                  downloadLink.href = compressedUrl;
+                } else {
+                  quality -= 0.1;
+                  compressImage();
+                }
+              },
+              'image/jpeg',
+              quality
+            );
+          };
+
+          compressImage();
         };
       };
 
