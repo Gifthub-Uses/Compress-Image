@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore a wide range of free online tools for image and PDF optimization, compression, and editing. Simplify your workflow with our easy-to-use tools.">
-  <meta name="keywords" content="image tools, PDF tools, online tools, image compression, PDF compression, free tools">
+  <meta name="description" content="Compress your images online with our free image compression tool. Optimize images for web and mobile with adjustable compression levels.">
+  <meta name="keywords" content="image compression, compress images, optimize images, image optimizer, free image tool">
   <meta name="author" content="Your Name">
-  <title>Online Tools - Image and PDF Tools for Everyone</title>
+  <title>Image Compression Tool - Optimize Your Images Online</title>
   <style>
     /* CSS Reset */
     * {
@@ -40,110 +40,144 @@
       opacity: 0.9;
     }
 
-    nav {
-      background-color: #0056b3;
-      padding: 10px 20px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     main {
-      padding: 40px 20px;
-      max-width: 1200px;
+      padding: 20px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .hero {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .hero h2 {
-      font-size: 2.2rem;
+    .upload-section {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
     }
 
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+    .upload-section input[type="file"] {
+      display: none;
     }
 
-    .hero a {
+    .upload-section label {
       display: inline-block;
-      padding: 12px 30px;
-      background-color: #28a745;
+      background-color: #007BFF;
       color: white;
-      text-decoration: none;
+      padding: 10px 20px;
       border-radius: 5px;
-      font-size: 1.1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-bottom: 15px;
     }
 
-    .hero a:hover {
-      background-color: #218838;
+    .upload-section label:hover {
+      background-color: #0056b3;
     }
 
-    .tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 40px;
+    .slider-container {
+      margin-bottom: 20px;
     }
 
-    .tool-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      flex: 1 1 calc(33.333% - 40px);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .tool-card h3 {
-      font-size: 1.4rem;
+    .slider-container label {
+      display: block;
+      font-size: 1rem;
       margin-bottom: 10px;
     }
 
-    .tool-card p {
-      font-size: 1rem;
-      color: #666;
+    .slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 8px;
+      background: #ddd;
+      border-radius: 5px;
+      outline: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
     }
 
-    .tool-card a {
-      display: inline-block;
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #007BFF;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #007BFF;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .upload-section button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .upload-section button:hover {
+      background-color: #218838;
+    }
+
+    .result-section {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .result-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    #compressedImageContainer img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
       margin-top: 15px;
-      padding: 8px 20px;
+    }
+
+    #downloadLink {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: #007BFF;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
-    .tool-card a:hover {
+    #downloadLink:hover {
       background-color: #0056b3;
+    }
+
+    .ad-unit {
+      margin: 20px 0;
+      text-align: center;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       background-color: #007BFF;
       color: white;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     footer p {
@@ -152,16 +186,6 @@
     }
 
     /* Responsive Design */
-    @media (max-width: 768px) {
-      .tools {
-        flex-direction: column;
-      }
-
-      .tool-card {
-        flex: 1 1 100%;
-      }
-    }
-
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -171,24 +195,11 @@
         font-size: 1rem;
       }
 
-      .hero h2 {
-        font-size: 1.8rem;
+      .upload-section, .result-section {
+        padding: 20px;
       }
 
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero a {
-        font-size: 1rem;
-        padding: 10px 20px;
-      }
-
-      .tool-card h3 {
-        font-size: 1.2rem;
-      }
-
-      .tool-card p {
+      .upload-section button {
         font-size: 0.9rem;
       }
     }
@@ -196,62 +207,115 @@
 </head>
 <body>
   <header>
-    <h1>Online Tools</h1>
-    <p>Your one-stop destination for free image and PDF tools.</p>
+    <h1>Image Compression Tool</h1>
+    <p>Compress and optimize your images for web and mobile.</p>
   </header>
 
-  <nav>
-    <a href="#tools">Tools</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- AdSense Ad Unit -->
+  <div class="ad-unit">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 
   <main>
-    <section class="hero">
-      <h2>Simplify Your Workflow</h2>
-      <p>Explore a wide range of free online tools for image and PDF optimization, compression, and editing.</p>
-      <a href="#tools">Explore Tools</a>
+    <section class="upload-section">
+      <label for="imageInput">Choose Image</label>
+      <input type="file" id="imageInput" accept="image/*">
+      <div class="slider-container">
+        <label for="compressionLevel">Compression Level: <span id="compressionValue">50%</span></label>
+        <input type="range" id="compressionLevel" class="slider" min="0.1" max="0.9" step="0.1" value="0.5">
+      </div>
+      <button id="compressBtn">Compress Image</button>
     </section>
 
-    <section id="tools" class="tools">
-      <div class="tool-card">
-       <a href="img-compress.html" class="tool-card-link">
-  <div class="tool-card">
-    <h3>Image Compressor</h3>
-    <p>Reduce image file sizes without losing quality.</p>
-    <span class="tool-button">Use Tool</span>
-  </div>
-</a>
-      <div class="tool-card">
-        <h3>PDF Compressor</h3>
-        <p>Compress PDF files for easy sharing and storage.</p>
-        <a href="pdf-compressor.html">Use Tool</a>
-      </div>
-      <div class="tool-card">
-        <h3>Image Converter</h3>
-        <p>Convert images to different formats like JPG, PNG, and more.</p>
-        <a href="image-converter.html">Use Tool</a>
-      </div>
-      <div class="tool-card">
-        <h3>PDF to Image</h3>
-        <p>Convert PDF pages to high-quality images.</p>
-        <a href="pdf-to-image.html">Use Tool</a>
-      </div>
-      <div class="tool-card">
-        <h3>Image Resizer</h3>
-        <p>Resize images to specific dimensions.</p>
-        <a href="image-resizer.html">Use Tool</a>
-      </div>
-      <div class="tool-card">
-        <h3>PDF Merger</h3>
-        <p>Merge multiple PDF files into one.</p>
-        <a href="pdf-merger.html">Use Tool</a>
-      </div>
+    <section class="result-section">
+      <h2>Compressed Image</h2>
+      <div id="compressedImageContainer"></div>
+      <a id="downloadLink" download="compressed_image.jpg">Download Compressed Image</a>
     </section>
   </main>
 
+  <!-- AdSense Ad Unit -->
+  <div class="ad-unit">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
   <footer>
-    <p>&copy; 2023 Online Tools. All rights reserved.</p>
+    <p>&copy; 2023 Image Compression Tool. All rights reserved.</p>
   </footer>
+
+  <script>
+    // JavaScript Functionality
+    const compressionSlider = document.getElementById('compressionLevel');
+    const compressionValue = document.getElementById('compressionValue');
+
+    // Update compression value display
+    compressionSlider.addEventListener('input', function () {
+      const value = Math.round(this.value * 100);
+      compressionValue.textContent = `${value}%`;
+    });
+
+    document.getElementById('compressBtn').addEventListener('click', function () {
+      const fileInput = document.getElementById('imageInput');
+      const compressionLevel = parseFloat(compressionSlider.value);
+      const compressedImageContainer = document.getElementById('compressedImageContainer');
+      const downloadLink = document.getElementById('downloadLink');
+
+      if (fileInput.files.length === 0) {
+        alert('Please select an image to compress.');
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        const img = new Image();
+        img.src = event.target.result;
+
+        img.onload = function () {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+
+          // Set canvas dimensions
+          canvas.width = img.width;
+          canvas.height = img.height;
+
+          // Draw image on canvas
+          ctx.drawImage(img, 0, 0);
+
+          // Compress image
+          canvas.toBlob(
+            function (blob) {
+              const compressedUrl = URL.createObjectURL(blob);
+              compressedImageContainer.innerHTML = `<img src="${compressedUrl}" alt="Compressed Image">`;
+              downloadLink.href = compressedUrl;
+            },
+            'image/jpeg',
+            compressionLevel
+          );
+        };
+      };
+
+      reader.readAsDataURL(file);
+    });
+  </script>
 </body>
 </html>
